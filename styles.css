@@ -1,10 +1,10 @@
-/* --- GLOBAL STYLES & THEME --- */
+/* --- GLOBAL CONFIG & THEME --- */
 :root {
     --bg-dark: #0a0a0a;
     --brand-red: #a31d1d;
     --text-light: #e6e6e6;
     --paper-cream: #f2ebd9;
-    --paper-shadow: rgba(0, 0, 0, 0.5);
+    --paper-shadow: rgba(0, 0, 0, 0.6);
 }
 
 html {
@@ -24,36 +24,109 @@ body {
     color: var(--text-light);
     font-family: 'Roboto', sans-serif;
     padding-bottom: 80px;
+    overflow-x: hidden;
 }
 
 .stars-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     background-image: radial-gradient(white 1px, transparent 0);
-    background-size: 40px 40px; opacity: 0.05; pointer-events: none; z-index: -1;
+    background-size: 40px 40px; opacity: 0.04; pointer-events: none; z-index: -1;
 }
 
-/* --- HEADER AND NAVIGATION TEXT --- */
-.brand-header { 
-    text-align: center; 
-    padding: 30px 0 10px; 
+/* --- POSTER HERO AREA (THE INTERACTION ZONE) --- */
+.hero-poster {
+    position: relative;
+    max-width: 600px;
+    height: 780px;
+    margin: 20px auto;
+    background: #111;
+    border: 3px solid #222;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 40px;
 }
 
 .sub-logo { 
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 1rem; 
-    letter-spacing: 4px; 
+    letter-spacing: 5px; 
     color: var(--text-light);
+    z-index: 10;
+    text-transform: uppercase;
 }
 
+/* Red Giant Title overlapping the record circle */
 .main-logo { 
     font-family: 'Monsieur La Doulaise', cursive; 
-    font-size: 6rem; 
+    font-size: 9.5rem; 
     color: var(--brand-red); 
-    text-shadow: 2px 2px 0px #000; 
-    margin-top: -15px; 
+    text-shadow: 3px 4px 0px #000;
+    z-index: 20; /* Sits directly over the vinyl */
+    margin-top: -30px;
+    pointer-events: none;
+    white-space: nowrap;
 }
 
+/* Vinyl Position Center stage */
+.vinyl-container {
+    position: absolute;
+    top: 170px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 5;
+}
+
+.vinyl-display { 
+    width: 340px; 
+    height: 340px; 
+    border-radius: 50%; 
+    background: #050505; 
+    border: 8px solid #141414; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+    overflow: hidden;
+}
+
+.spinning-vinyl { 
+    width: 100%; 
+    height: 100%; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    animation: spin 12s linear infinite; 
+}
+
+/* Welcome Card moved inside the paper structure exactly like mockup */
+.welcome-card { 
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
+    transform: rotate(-3deg); 
+    width: 260px;
+    padding: 20px;
+    text-align: center;
+    z-index: 25;
+}
+
+.welcome-text-1, .welcome-text-3 {
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-size: 3.5rem;
+    color: var(--brand-red);
+    line-height: 0.8;
+}
+
+.welcome-text-2 {
+    font-family: 'Gaegu', cursive;
+    font-size: 1.8rem;
+    color: #111;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* --- STRUCTURE AND SECTIONS --- */
 .main-content { 
     max-width: 800px; 
     margin: 0 auto; 
@@ -61,14 +134,13 @@ body {
 }
 
 section { 
-    padding: 50px 0; 
+    padding: 60px 0; 
     border-bottom: 1px dashed rgba(255,255,255,0.1); 
 }
 
-/* Reverted back to the bold Bebas Neue layout */
 .section-title { 
     font-family: 'Bebas Neue', sans-serif; 
-    font-size: 3.5rem; 
+    font-size: 3.8rem; 
     text-align: center; 
     letter-spacing: 2px;
     margin-bottom: 25px; 
@@ -79,93 +151,87 @@ section {
     text-align: center; 
     color: #aaa; 
     margin-top: -15px; 
-    margin-bottom: 30px; 
+    margin-bottom: 40px; 
     letter-spacing: 1px;
 }
 
 .text-red { color: var(--brand-red); }
 
-/* --- HERO DISPLAY --- */
-.hero-section { display: flex; flex-direction: column; align-items: center; gap: 30px; }
-.vinyl-display { width: 220px; height: 220px; border-radius: 50%; background: #000; border: 5px solid #111; box-shadow: 0 10px 25px rgba(0,0,0,0.9); }
-.spinning-vinyl { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; animation: spin 10s linear infinite; }
-
 /* --- PAPER CARDS --- */
 .paper-card { 
     background-color: var(--paper-cream); 
-    color: #1a1a1a; 
-    padding: 24px; 
-    font-family: 'Roboto', sans-serif; 
-    font-size: 1.1rem;
-    line-height: 1.5;
-    box-shadow: 5px 8px 20px var(--paper-shadow); 
-    border-radius: 2px; 
-    clip-path: polygon(0% 0%, 100% 1%, 99% 98%, 0% 100%); 
-}
-
-.welcome-card { transform: rotate(-2deg); text-align: center; max-width: 400px; }
-.welcome-card h2 { 
-    font-size: 3.5rem; 
-    color: var(--brand-red); 
-    font-family: 'Monsieur La Doulaise', cursive; 
-    font-weight: normal;
-    line-height: 1;
-}
-.welcome-card span { 
     color: #111; 
-    font-family: 'Gaegu', cursive; 
-    font-size: 2.2rem; 
-    display: inline-block;
-    margin: 10px 0;
+    box-shadow: 4px 10px 25px var(--paper-shadow); 
+    border-radius: 1px; 
+    clip-path: polygon(1% 2%, 99% 0%, 100% 98%, 0% 97%); 
 }
 
 /* --- CATALOG CARD STYLES --- */
-.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-.product-card { background: #151515; border: 1px solid #333; padding: 15px; text-align: center; transition: transform 0.2s; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
+.product-card { background: #141414; border: 1px solid #252525; padding: 15px; text-align: center; transition: transform 0.2s; }
 .product-card:hover { transform: translateY(-5px); border-color: var(--brand-red); }
 .product-image-placeholder { background: #222; height: 250px; display: flex; align-items: center; justify-content: center; color: #555; margin-bottom: 15px; font-family: 'Roboto', sans-serif; }
 
-/* Set to match the main collection font (Bebas Neue) */
 .product-title { 
     font-family: 'Bebas Neue', sans-serif; 
-    font-size: 1.8rem; 
+    font-size: 2rem; 
     letter-spacing: 1px;
     margin-bottom: 5px; 
 }
 .product-price { font-family: 'Roboto', sans-serif; font-weight: bold; color: var(--brand-red); font-size: 1.2rem; }
 
-/* --- ORDER PROCESS --- */
-.step-card { margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
+/* --- ORDER PROCESS STEP CARDS --- */
+.order-steps { display: flex; flex-direction: column; gap: 20px; align-items: center; }
+.step-card { padding: 25px; width: 100%; max-width: 500px; }
 .step-card h3 { 
     font-family: 'Monsieur La Doulaise', cursive; 
     color: var(--brand-red); 
-    font-size: 2.8rem; 
+    font-size: 3rem; 
     font-weight: normal;
-    margin-bottom: 5px; 
+    line-height: 0.9;
+    margin-bottom: 10px; 
 }
-.tape-1 { transform: rotate(-1deg); } .tape-2 { transform: rotate(1deg); } .tape-3 { transform: rotate(-0.5deg); }
-.whatsapp-container { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; background: rgba(0,0,0,0.05); padding: 10px; border-radius: 4px; border: 1px dashed #ccc; }
+.step-card p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+}
+.tape-1 { transform: rotate(-1.5deg); } 
+.tape-2 { transform: rotate(1deg); } 
+.tape-3 { transform: rotate(-0.5deg); }
+
+.whatsapp-container { display: flex; align-items: center; justify-content: space-between; margin-top: 15px; background: rgba(0,0,0,0.06); padding: 10px; border: 1px dashed #bbb; }
 .wa-link { font-family: 'Roboto', sans-serif; font-weight: bold; color: #0b6623; text-decoration: none; font-size: 1rem; }
-.qr-img { width: 60px; height: 60px; }
+.qr-img { width: 65px; height: 65px; background: white; padding: 2px; }
 
 /* --- CARE INSTRUCTIONS --- */
-.dual-guide { display: flex; flex-wrap: wrap; gap: 30px; }
+.dual-guide { display: flex; flex-wrap: wrap; gap: 40px; }
 .guide-column { flex: 1; min-width: 280px; }
 .guide-block p { font-family: 'Roboto', sans-serif; font-size: 1rem; margin-bottom: 15px; line-height: 1.6; color: #ccc; }
 .guide-block strong { color: var(--brand-red); font-family: 'Roboto', sans-serif; font-size: 1.1rem; }
 
 /* --- FOOTER LAYOUT --- */
-.site-footer { text-align: center; padding: 40px 0; font-size: 0.9rem; color: #666; font-family: 'Roboto', sans-serif; }
+.site-footer { text-align: center; padding: 50px 0; font-size: 0.9rem; color: #666; font-family: 'Roboto', sans-serif; }
 .site-footer p { margin-bottom: 10px; }
 
-/* --- BOTTOM STICKY MEDIA NAV --- */
-.media-controls { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(10, 10, 10, 0.95); border-top: 2px solid var(--brand-red); display: flex; justify-content: center; gap: 40px; padding: 15px 0; z-index: 100; backdrop-filter: blur(5px); }
-.control-btn { display: flex; flex-direction: column; align-items: center; text-decoration: none; border: none; cursor: pointer; transition: transform 0.2s ease; }
-.control-btn svg { width: 30px; height: 30px; fill: #666; transition: fill 0.2s; }
-.control-btn span { font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 0.7rem; color: #666; margin-top: 5px; letter-spacing: 1px; }
+/* --- STICKY NAV TRACK BUTTONS --- */
+.media-controls { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(10, 10, 10, 0.96); border-top: 2px solid var(--brand-red); display: flex; justify-content: center; gap: 45px; padding: 15px 0; z-index: 100; backdrop-filter: blur(6px); }
+.control-btn { display: flex; flex-direction: column; align-items: center; text-decoration: none; border: none; cursor: pointer; transition: transform 0.15s ease; }
+.control-btn svg { width: 28px; height: 28px; fill: #555; transition: fill 0.2s; }
+.control-btn span { font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 0.7rem; color: #555; margin-top: 5px; letter-spacing: 1px; }
 .control-btn:hover svg { fill: var(--brand-red); }
 .control-btn:hover span { color: var(--text-light); }
 .active-player svg { fill: var(--brand-red); }
 .active-player span { color: var(--text-light); }
 
 @keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Responsive tweaks for narrow devices */
+@media(max-width: 600px) {
+    .hero-poster { height: 690px; width: 95%; }
+    .main-logo { font-size: 7.5rem; }
+    .vinyl-display { width: 280px; height: 280px; }
+    .welcome-card { width: 220px; left: calc(50% - 110px); bottom: 40px; }
+}
