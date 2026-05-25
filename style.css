@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #0b0b0b;
+    background-color: #0b0b0b; /* Deep black base */
     color: #f5f5f5;
     line-height: 1.6;
     overflow-x: hidden;
@@ -24,14 +24,14 @@ nav {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #3a0000; /* Subtle dark red border */
 }
 
 nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 2px;
-    color: #fff;
+    color: #ff3333; /* Crimson Red Logo */
 }
 
 nav .logo span {
@@ -58,10 +58,10 @@ nav ul a {
 }
 
 nav ul a:hover {
-    color: #fff;
+    color: #ff3333; /* Highlights red on hover */
 }
 
-/* --- HERO SECTION --- */
+/* --- SUBTLY LAYERED HERO BACKGROUND (RED & BLACK) --- */
 header {
     min-height: 100vh;
     display: flex;
@@ -69,15 +69,26 @@ header {
     justify-content: center;
     align-items: center;
     padding: 8rem 4rem 4rem 4rem;
-    
-    /* BACKGROUND IMAGE ALIGNED HERE */
-    background-image: linear-gradient(rgba(11, 11, 11, 0.7), rgba(11, 11, 11, 0.85)), url('images/background.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
+    position: relative;
     gap: 4rem;
     max-width: 100%;
+
+    /* LAYERED BACKGROUND ARCHITECTURE:
+       Layer 1 (Top): Heavy dark vignette gradient to isolate text visibility.
+       Layer 2 (Middle): Translucent crimson tint to cast a red tone.
+       Layer 3 (Middle-Low): Your retro instruments graphic set to low visibility via blend properties.
+       Layer 4 (Bottom): Base texture background asset.
+    */
+    background-image: 
+        radial-gradient(circle, rgba(11, 11, 11, 0.4) 0%, rgba(5, 5, 5, 0.95) 90%),
+        linear-gradient(rgba(150, 0, 0, 0.15), rgba(11, 11, 11, 0.85)),
+        url('images/retro-instruments.jpeg'),
+        url('images/background.jpeg');
+    
+    background-size: cover, cover, cover, cover;
+    background-position: center, center, center, center;
+    background-repeat: no-repeat;
+    background-blend-mode: normal, multiply, luminosity, normal;
 }
 
 .hero-content {
@@ -91,30 +102,31 @@ header h1 {
     letter-spacing: 4px;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    color: #ffffff;
+    text-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); /* Soft red ambient glow */
 }
 
 header .subtitle {
     font-size: 1.2rem;
-    color: #bbb;
+    color: #ff4d4d; /* Light red secondary text */
     margin-bottom: 2rem;
     letter-spacing: 2px;
 }
 
 header h2 {
     font-size: 2.2rem;
-    color: #e5c158; /* Elegant gold accent */
+    color: #ffffff; 
     margin-bottom: 2.5rem;
     max-width: 600px;
     font-weight: 300;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
 }
 
-/* SIDE-BY-SIDE IMAGES */
+/* SIDE-BY-SIDE IMAGES ARRANGEMENT */
 .hero-images-container {
     flex: 1.2;
     display: flex;
-    direction: row;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
@@ -126,42 +138,47 @@ header h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(20, 10, 10, 0.4); /* Dark translucent red/black framing */
+    border: 1px solid rgba(255, 51, 51, 0.2); /* Soft red border outline */
     padding: 1rem;
     border-radius: 12px;
     backdrop-filter: blur(5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-    transition: transform 0.4s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .nail-frame:hover {
     transform: translateY(-10px) scale(1.02);
-    border-color: #e5c158;
+    border-color: #ff3333; /* Brightens red frame border on hover */
+    box-shadow: 0 15px 35px rgba(255, 0, 0, 0.15); /* Adds deep red glow effect */
 }
 
 .nail-frame img {
     width: 100%;
     max-height: 55vh;
     object-fit: contain;
+    border-radius: 6px;
 }
 
+/* BUTTON STYLING */
 .btn {
     display: inline-block;
-    background-color: #fff;
-    color: #000;
+    background-color: #ff3333; /* Crimson red call-to-action button */
+    color: #ffffff;
     padding: 0.8rem 2rem;
     text-decoration: none;
     font-weight: bold;
     border-radius: 4px;
-    transition: transform 0.3s, background-color 0.3s;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
     text-transform: uppercase;
     letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(255, 51, 51, 0.2);
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    background-color: #e5c158;
+    background-color: #e60000; /* Darkens slightly on click hover */
+    box-shadow: 0 4px 15px rgba(255, 51, 51, 0.4);
 }
 
 /* --- SECTION STYLES --- */
@@ -169,7 +186,7 @@ section {
     padding: 6rem 2rem;
     max-width: 1100px;
     margin: 0 auto;
-    border-bottom: 1px solid #1a1a1a;
+    border-bottom: 1px solid #1a0505; /* Deep red tint border separation */
 }
 
 section h2 {
@@ -186,11 +203,11 @@ section h2::after {
     display: block;
     width: 50px;
     height: 2px;
-    background-color: #e5c158;
+    background-color: #ff3333; /* Red divider lines under titles */
     margin: 10px auto 0 auto;
 }
 
-/* --- CARD / STEP GRID --- */
+/* --- CARD STRUCTURES --- */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -199,7 +216,7 @@ section h2::after {
 
 .card {
     background-color: #121212;
-    border: 1px solid #222;
+    border: 1px solid #1f1f1f;
     padding: 2.5rem 2rem;
     border-radius: 8px;
     text-align: center;
@@ -209,13 +226,13 @@ section h2::after {
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: #e5c158;
+    border-color: #ff3333; /* Red highlight on hovering steps cards */
 }
 
 .step-number {
     font-size: 3rem;
     font-weight: bold;
-    color: rgba(229, 193, 88, 0.15);
+    color: rgba(255, 51, 51, 0.08); /* Faded vintage aesthetic tracking number */
     position: absolute;
     top: 10px;
     right: 20px;
@@ -224,7 +241,7 @@ section h2::after {
 .card h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: #e5c158;
+    color: #ff4d4d;
     letter-spacing: 1px;
 }
 
@@ -233,7 +250,7 @@ section h2::after {
     font-size: 1rem;
 }
 
-/* --- ORDER SPECIFIC --- */
+/* --- WHATSAPP COMMUNICATION BUTTON --- */
 .whatsapp-btn {
     background-color: #25D366;
     color: white;
@@ -251,14 +268,14 @@ footer {
     padding: 3rem 2rem;
     color: #555;
     font-size: 0.9rem;
-    border-top: 1px solid #1a1a1a;
+    border-top: 1px solid #1a0505;
 }
 
 footer p {
     margin-bottom: 0.5rem;
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* --- MOBILE RESPONSIVE TUNING --- */
 @media (max-width: 900px) {
     header {
         flex-direction: column;
