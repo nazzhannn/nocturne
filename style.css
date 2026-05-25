@@ -68,43 +68,35 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 6rem 4rem 2rem 4rem;
-    background: radial-gradient(circle, #1a1a1a 0%, #0b0b0b 100%);
+    padding: 8rem 4rem 4rem 4rem;
+    
+    /* BACKGROUND IMAGE ALIGNED HERE */
+    background-image: linear-gradient(rgba(11, 11, 11, 0.7), rgba(11, 11, 11, 0.85)), url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
     gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 100%;
 }
 
 .hero-content {
     flex: 1;
     text-align: left;
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-image img {
-    max-width: 100%;
-    max-height: 60vh;
-    object-fit: contain;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.7));
-    border-radius: 8px;
+    z-index: 2;
 }
 
 header h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     letter-spacing: 4px;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 header .subtitle {
     font-size: 1.2rem;
-    color: #888;
+    color: #bbb;
     margin-bottom: 2rem;
     letter-spacing: 2px;
 }
@@ -115,6 +107,43 @@ header h2 {
     margin-bottom: 2.5rem;
     max-width: 600px;
     font-weight: 300;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* SIDE-BY-SIDE IMAGES */
+.hero-images-container {
+    flex: 1.2;
+    display: flex;
+    direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 2;
+}
+
+.nail-frame {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    transition: transform 0.4s ease;
+}
+
+.nail-frame:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #e5c158;
+}
+
+.nail-frame img {
+    width: 100%;
+    max-height: 55vh;
+    object-fit: contain;
 }
 
 .btn {
@@ -186,7 +215,7 @@ section h2::after {
 .step-number {
     font-size: 3rem;
     font-weight: bold;
-    color: rgba(229, 193, 88, 0.2);
+    color: rgba(229, 193, 88, 0.15);
     position: absolute;
     top: 10px;
     right: 20px;
@@ -230,7 +259,28 @@ footer p {
 }
 
 /* --- RESPONSIVE DESIGN --- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 7rem 1.5rem 3rem 1.5rem;
+        gap: 3rem;
+    }
+    .hero-content {
+        text-align: center;
+    }
+    .hero-images-container {
+        width: 100%;
+    }
+    header h1 {
+        font-size: 3rem;
+    }
+    header h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 600px) {
     nav {
         flex-direction: column;
         gap: 1rem;
@@ -239,20 +289,12 @@ footer p {
     nav ul {
         gap: 1rem;
     }
-    header {
+    .hero-images-container {
         flex-direction: column;
-        text-align: center;
-        padding: 6rem 1.5rem 2rem 1.5rem;
-        gap: 2rem;
+        gap: 1rem;
     }
-    .hero-content {
-        text-align: center;
-    }
-    header h1 {
-        font-size: 2.5rem;
-    }
-    header h2 {
-        font-size: 1.5rem;
+    .nail-frame img {
+        max-height: 40vh;
     }
     section {
         padding: 4rem 1.5rem;
