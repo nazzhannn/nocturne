@@ -22,7 +22,7 @@ body {
     background-image: radial-gradient(rgba(163, 29, 29, 0.15) 15%, transparent 16%);
     background-size: 16px 16px;
     color: var(--text-light);
-    font-family: 'Impact', 'Arial Black', sans-serif; /* Clean, heavy standard font */
+    font-family: 'Roboto', sans-serif; /* Client requested standard text */
     padding-bottom: 80px;
 }
 
@@ -39,19 +39,19 @@ body {
 }
 
 .sub-logo { 
-    font-family: 'Impact', sans-serif;
-    font-size: 1.2rem; 
-    letter-spacing: 5px; 
+    font-family: 'Roboto', sans-serif; /* Client requested */
+    font-weight: 700;
+    font-size: 1rem; 
+    letter-spacing: 4px; 
     color: var(--text-light);
 }
 
 .main-logo { 
-    font-family: 'Metal Mania', cursive; /* Gothic alternative replacement */
-    font-size: 5rem; 
+    font-family: 'Monsieur La Doulaise', cursive; 
+    font-size: 6rem; /* Bumped up size because it's a thin font */
     color: var(--brand-red); 
-    text-shadow: 3px 3px 0px #000; 
-    margin-top: -5px; 
-    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #000; 
+    margin-top: -15px; 
 }
 
 .main-content { 
@@ -66,20 +66,20 @@ section {
 }
 
 .section-title { 
-    font-family: 'Bebas Neue', sans-serif; /* Clean, high-impact all-caps style */
-    font-size: 3.5rem; 
+    font-family: 'Monsieur La Doulaise', cursive; /* Client requested for headers */
+    font-size: 4.5rem; 
     text-align: center; 
-    letter-spacing: 3px; 
+    font-weight: normal;
     margin-bottom: 25px; 
 }
 
 .section-subtitle { 
-    font-family: 'Impact', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: center; 
     color: #aaa; 
     margin-top: -15px; 
     margin-bottom: 30px; 
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 }
 
 .text-red { color: var(--brand-red); }
@@ -89,54 +89,77 @@ section {
 .vinyl-display { width: 220px; height: 220px; border-radius: 50%; background: #000; border: 5px solid #111; box-shadow: 0 10px 25px rgba(0,0,0,0.9); }
 .spinning-vinyl { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; animation: spin 10s linear infinite; }
 
-/* --- PAPER CARDS WITH HANDWRITTEN STYLE --- */
+/* --- PAPER CARDS --- */
 .paper-card { 
     background-color: var(--paper-cream); 
     color: #1a1a1a; 
-    padding: 25px; 
-    font-family: 'Rock Salt', cursive; /* Handwritten marker replacement */
-    font-size: 0.9rem;
-    line-height: 1.8;
+    padding: 24px; 
+    font-family: 'Roboto', sans-serif; /* Client requested */
+    font-size: 1.1rem;
+    line-height: 1.5;
     box-shadow: 5px 8px 20px var(--paper-shadow); 
     border-radius: 2px; 
     clip-path: polygon(0% 0%, 100% 1%, 99% 98%, 0% 100%); 
 }
 
 .welcome-card { transform: rotate(-2deg); text-align: center; max-width: 400px; }
-.welcome-card h2 { font-size: 2.2rem; color: var(--brand-red); font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; }
-.welcome-card span { color: #111; font-family: 'Metal Mania', cursive; font-size: 2.5rem; }
+.welcome-card h2 { 
+    font-size: 3.5rem; 
+    color: var(--brand-red); 
+    font-family: 'Monsieur La Doulaise', cursive; /* Client requested */
+    font-weight: normal;
+    line-height: 1;
+}
+.welcome-card span { 
+    color: #111; 
+    font-family: 'Gaegu', cursive; /* Client requested */
+    font-size: 2.2rem; 
+    display: inline-block;
+    margin: 10px 0;
+}
 
 /* --- CATALOG CARD STYLES --- */
 .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
 .product-card { background: #151515; border: 1px solid #333; padding: 15px; text-align: center; transition: transform 0.2s; }
 .product-card:hover { transform: translateY(-5px); border-color: var(--brand-red); }
-.product-image-placeholder { background: #222; height: 250px; display: flex; align-items: center; justify-content: center; color: #555; margin-bottom: 15px; font-family: 'Impact', sans-serif; letter-spacing: 1px; }
-.product-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; margin-bottom: 5px; letter-spacing: 1px; }
-.product-price { font-family: 'Impact', sans-serif; color: var(--brand-red); font-size: 1.2rem; letter-spacing: 0.5px; }
+.product-image-placeholder { background: #222; height: 250px; display: flex; align-items: center; justify-content: center; color: #555; margin-bottom: 15px; font-family: 'Roboto', sans-serif; }
+.product-title { 
+    font-family: 'Monsieur La Doulaise', cursive; /* Client requested (same as collection) */
+    font-size: 2.8rem; 
+    font-weight: normal;
+    margin-bottom: 5px; 
+}
+.product-price { font-family: 'Roboto', sans-serif; font-weight: bold; color: var(--brand-red); font-size: 1.2rem; }
 
 /* --- ORDER PROCESS --- */
 .step-card { margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
-.step-card h3 { font-family: 'Bebas Neue', sans-serif; color: var(--brand-red); font-size: 2.2rem; margin-bottom: 5px; letter-spacing: 1px; }
-.tape-1 { transform: rotate(-1.5deg); } .tape-2 { transform: rotate(1deg); } .tape-3 { transform: rotate(-0.5deg); }
-.whatsapp-container { display: flex; align-items: center; justify-content: space-between; margin-top: 15px; background: rgba(0,0,0,0.05); padding: 10px; border-radius: 4px; border: 1px dashed #ccc; }
-.wa-link { font-family: 'Impact', sans-serif; color: #0b6623; text-decoration: none; font-size: 1.1rem; letter-spacing: 0.5px; }
-.qr-img { width: 60px; height: 60px; background: white; padding: 2px; }
+.step-card h3 { 
+    font-family: 'Monsieur La Doulaise', cursive; /* Client requested */
+    color: var(--brand-red); 
+    font-size: 2.8rem; 
+    font-weight: normal;
+    margin-bottom: 5px; 
+}
+.tape-1 { transform: rotate(-1deg); } .tape-2 { transform: rotate(1deg); } .tape-3 { transform: rotate(-0.5deg); }
+.whatsapp-container { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; background: rgba(0,0,0,0.05); padding: 10px; border-radius: 4px; border: 1px dashed #ccc; }
+.wa-link { font-family: 'Roboto', sans-serif; font-weight: bold; color: #0b6623; text-decoration: none; font-size: 1rem; }
+.qr-img { width: 60px; height: 60px; }
 
 /* --- CARE INSTRUCTIONS --- */
 .dual-guide { display: flex; flex-wrap: wrap; gap: 30px; }
 .guide-column { flex: 1; min-width: 280px; }
-.guide-block p { font-family: 'Impact', sans-serif; font-size: 1.1rem; letter-spacing: 0.8px; margin-bottom: 15px; line-height: 1.6; color: #ccc; }
-.guide-block strong { color: var(--brand-red); font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 1px; }
+.guide-block p { font-family: 'Roboto', sans-serif; font-size: 1rem; margin-bottom: 15px; line-height: 1.6; color: #ccc; }
+.guide-block strong { color: var(--brand-red); font-family: 'Roboto', sans-serif; font-size: 1.1rem; }
 
 /* --- FOOTER LAYOUT --- */
-.site-footer { text-align: center; padding: 40px 0; font-size: 0.9rem; color: #666; font-family: 'Impact', sans-serif; letter-spacing: 1px; }
+.site-footer { text-align: center; padding: 40px 0; font-size: 0.9rem; color: #666; font-family: 'Roboto', sans-serif; }
 .site-footer p { margin-bottom: 10px; }
 
 /* --- BOTTOM STICKY MEDIA NAV --- */
 .media-controls { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(10, 10, 10, 0.95); border-top: 2px solid var(--brand-red); display: flex; justify-content: center; gap: 40px; padding: 15px 0; z-index: 100; backdrop-filter: blur(5px); }
 .control-btn { display: flex; flex-direction: column; align-items: center; text-decoration: none; border: none; cursor: pointer; transition: transform 0.2s ease; }
 .control-btn svg { width: 30px; height: 30px; fill: #666; transition: fill 0.2s; }
-.control-btn span { font-family: 'Impact', sans-serif; font-size: 0.8rem; color: #666; margin-top: 5px; letter-spacing: 1px; }
+.control-btn span { font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 0.7rem; color: #666; margin-top: 5px; letter-spacing: 1px; }
 .control-btn:hover svg { fill: var(--brand-red); }
 .control-btn:hover span { color: var(--text-light); }
 .active-player svg { fill: var(--brand-red); }
