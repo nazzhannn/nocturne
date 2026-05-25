@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const mainVinyl = document.getElementById("main-vinyl");
     const productCards = document.querySelectorAll(".product-card");
-    const playBtn = document.getElementById("play-btn");
+    const navigationBar = document.getElementById("navigation-bar");
 
     // Interactive feature: Vinyl speeds up when user hovers over a product
     productCards.forEach(card => {
@@ -14,13 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // --- NEW: Scroll Morphed Navigation Icons --- //
+    // --- Synchronized Whole-Bar Playback Morphing --- //
     window.addEventListener('scroll', () => {
-        // Threshold: Once user scrolls past 200px from the top
+        // Trigger morph once screen is scrolled down 200 pixels
         if (window.scrollY > 200) {
-            playBtn.classList.add('is-scrolled'); // Triggers CSS morph to Pause
+            navigationBar.classList.add('is-scrolled');
         } else {
-            playBtn.classList.remove('is-scrolled'); // Returns to Play arrow
+            navigationBar.classList.remove('is-scrolled');
         }
     });
 });
