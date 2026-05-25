@@ -23,7 +23,7 @@ body {
     background-size: 16px 16px;
     color: var(--text-light);
     font-family: 'Roboto', sans-serif;
-    padding-bottom: 80px;
+    padding-bottom: 120px;
     overflow-x: hidden;
 }
 
@@ -33,18 +33,17 @@ body {
     background-size: 40px 40px; opacity: 0.04; pointer-events: none; z-index: -1;
 }
 
-/* --- POSTER HERO AREA (THE INTERACTION ZONE) --- */
+/* --- POSTER HERO AREA --- */
 .hero-poster {
     position: relative;
-    max-width: 600px;
-    height: 780px;
+    max-width: 800px; /* Widened slightly to give the right-side vinyl breathing room */
+    height: 850px; 
     margin: 20px auto;
-    background: #111;
+    background: linear-gradient(180deg, #111 0%, #050505 100%);
     border: 3px solid #222;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     display: flex;
     flex-direction: column;
-    align-items: center;
     overflow: hidden;
     padding-top: 40px;
 }
@@ -57,37 +56,59 @@ body {
     color: var(--text-light);
     z-index: 10;
     text-transform: uppercase;
+    text-align: center;
 }
 
-/* Red Giant Title overlapping the record circle */
+/* Overlapping Title - Removed bold attributes and heavy black drop shadow blocks */
+.logo-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 20; 
+    width: 100%;
+}
+
 .main-logo { 
     font-family: 'Monsieur La Doulaise', cursive; 
-    font-size: 11rem; 
+    font-size: 13rem; /* Giant Title */
     color: var(--brand-red); 
-    text-shadow: 3px 4px 0px #000;
-    z-index: 20; /* Sits directly over the vinyl */
-    margin-top: -30px;
+    font-weight: normal; /* Not bold */
+    letter-spacing: -2px;
+    margin-top: -10px;
     pointer-events: none;
     white-space: nowrap;
+    z-index: 21;
 }
 
-/* Vinyl Position Center stage */
+.logo-byline {
+    font-family: 'Roboto', sans-serif;
+    color: #666;
+    font-size: 0.9.5rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    position: absolute;
+    right: 80px;
+    bottom: 15px; /* Positioned carefully under right wing of the cursive title */
+    z-index: 22;
+    text-transform: uppercase;
+}
+
+/* Giant Vinyl shifted to the Right */
 .vinyl-container {
     position: absolute;
-    top: 170px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    top: 220px;
+    right: -100px; /* Pushed significantly to the right border */
     z-index: 5;
 }
 
 .vinyl-display { 
-    width: 340px; 
-    height: 340px; 
+    width: 520px; /* Big Big Vinyl size */
+    height: 520px; 
     border-radius: 50%; 
     background: #050505; 
-    border: 8px solid #141414; 
-    box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+    border: 12px solid #141414; 
+    box-shadow: -10px 15px 40px rgba(0,0,0,0.9);
     overflow: hidden;
 }
 
@@ -99,30 +120,33 @@ body {
     animation: spin 12s linear infinite; 
 }
 
-/* Welcome Card moved inside the paper structure exactly like mockup */
-.welcome-card { 
+/* Clean Welcome Text without the box background */
+.welcome-text-container { 
     position: absolute;
-    bottom: 60px;
-    left: 40px;
-    transform: rotate(-3deg); 
-    width: 260px;
-    padding: 20px;
-    text-align: center;
-    z-index: 25;
+    bottom: 120px;
+    left: 50px; /* Kept on the left to balance the right-hand vinyl */
+    z-index: 25; 
+    text-align: left;
 }
 
+/* Set to match the Bebas Neue collection look exactly */
 .welcome-text-1, .welcome-text-3 {
-    font-family: 'Monsieur La Doulaise', cursive;
-    font-size: 3.5rem;
-    color: var(--brand-red);
-    line-height: 0.8;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: var(--text-light);
+    line-height: 0.9;
+    letter-spacing: 2px;
+}
+
+.welcome-text-3 {
+    color: var(--brand-red); /* Kept store accent color popping */
 }
 
 .welcome-text-2 {
     font-family: 'Gaegu', cursive;
-    font-size: 1.8rem;
-    color: #111;
-    margin: 5px 0;
+    font-size: 2.2rem;
+    color: #555;
+    margin: 5px 10px;
     font-weight: bold;
 }
 
@@ -216,22 +240,38 @@ section {
 .site-footer { text-align: center; padding: 50px 0; font-size: 0.9rem; color: #666; font-family: 'Roboto', sans-serif; }
 .site-footer p { margin-bottom: 10px; }
 
-/* --- STICKY NAV TRACK BUTTONS --- */
-.media-controls { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(10, 10, 10, 0.96); border-top: 2px solid var(--brand-red); display: flex; justify-content: center; gap: 45px; padding: 15px 0; z-index: 100; backdrop-filter: blur(6px); }
+/* --- STICKY NAV TRACK BUTTONS WITH CROSS-MORPH --- */
+.media-controls { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(10, 10, 10, 0.97); border-top: 2px solid var(--brand-red); display: flex; justify-content: center; gap: 45px; padding: 18px 0; z-index: 100; backdrop-filter: blur(6px); }
 .control-btn { display: flex; flex-direction: column; align-items: center; text-decoration: none; border: none; cursor: pointer; transition: transform 0.15s ease; }
-.control-btn svg { width: 28px; height: 28px; fill: #555; transition: fill 0.2s; }
-.control-btn span { font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 0.7rem; color: #555; margin-top: 5px; letter-spacing: 1px; }
-.control-btn:hover svg { fill: var(--brand-red); }
+.control-btn span { font-family: 'Roboto', sans-serif; font-weight: bold; font-size: 0.75rem; color: #666; margin-top: 5px; letter-spacing: 1px; }
+
+#play-btn { position: relative; width: 60px; height: 40px; display: flex; justify-content: center; align-items: center; }
+#play-btn span { position: absolute; bottom: -15px; }
+.nav-icon { position: absolute; transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; }
+.nav-icon svg { width: 28px; height: 28px; fill: #666; }
+
+#play-btn.playing .nav-icon.arrow-icon { opacity: 1; transform: scale(1); }
+#play-btn.playing .nav-icon.pause-icon { opacity: 0; transform: scale(0.6); }
+#play-btn .nav-icon.pause-icon { opacity: 0; transform: scale(0.6); }
+#play-btn.is-scrolled { width: auto; }
+#play-btn.is-scrolled .nav-icon.pause-icon { opacity: 1 !important; transform: scale(1) !important; }
+#play-btn.is-scrolled .nav-icon.arrow-icon { opacity: 0 !important; transform: scale(0.6) !important; }
+
 .control-btn:hover span { color: var(--text-light); }
-.active-player svg { fill: var(--brand-red); }
-.active-player span { color: var(--text-light); }
+.control-btn:hover .nav-icon svg, .control-btn:hover svg { fill: var(--brand-red); }
+#play-btn.playing .nav-icon.arrow-icon svg { fill: var(--text-light); }
+#play-btn.is-scrolled .nav-icon.pause-icon svg { fill: var(--brand-red); }
+.active-player span { color: var(--text-light) !important; }
 
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
-/* Responsive tweaks for narrow devices */
-@media(max-width: 600px) {
-    .hero-poster { height: 690px; width: 95%; }
-    .main-logo { font-size: 7.5rem; }
-    .vinyl-display { width: 280px; height: 280px; }
-    .welcome-card { width: 220px; left: calc(50% - 110px); bottom: 40px; }
+/* Responsive tweaks for screens narrower than 768px */
+@media(max-width: 768px) {
+    .hero-poster { height: 750px; width: 95%; }
+    .main-logo { font-size: 9rem; }
+    .logo-byline { right: 40px; bottom: 5px; }
+    .vinyl-container { top: 240px; right: -160px; }
+    .vinyl-display { width: 380px; height: 380px; }
+    .welcome-text-container { left: 30px; bottom: 60px; }
+    .welcome-text-1, .welcome-text-3 { font-size: 3.8rem; }
 }

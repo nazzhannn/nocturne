@@ -15,7 +15,10 @@
     <header class="hero-poster">
         <p class="sub-logo">PRESS-ONS NAILS</p>
         
-        <h1 class="main-logo">Nocturne</h1>
+        <div class="logo-wrapper">
+            <h1 class="main-logo">Nocturne</h1>
+            <span class="logo-byline">by fei</span>
+        </div>
 
         <div class="vinyl-container">
             <div class="vinyl-display">
@@ -23,10 +26,10 @@
             </div>
         </div>
 
-        <div class="paper-card welcome-card">
-            <p class="welcome-text-1">Welcome</p>
-            <p class="welcome-text-2">To</p>
-            <p class="welcome-text-3">Our Store!</p>
+        <div class="welcome-text-container">
+            <p class="welcome-text-1">welcome</p>
+            <p class="welcome-text-2">to</p>
+            <p class="welcome-text-3">our store!</p>
         </div>
     </header>
 
@@ -64,11 +67,11 @@
             <h2 class="section-title">HOW TO ORDER</h2>
             <div class="order-steps">
                 <div class="paper-card step-card tape-1">
-                    <h3>Step 1</h3>
+                    <h3>STEP 1</h3>
                     <p>FIND YOUR FAVORITE NAIL DESIGN INSPO!</p>
                 </div>
                 <div class="paper-card step-card tape-2">
-                    <h3>Step 2</h3>
+                    <h3>STEP 2</h3>
                     <p>SLIDE INTO NOCTURNE'S WHATSAPP DMs AND TELL US ALL ABOUT YOUR VISION.</p>
                     <div class="whatsapp-container">
                         <a href="https://wa.me/60123022659" target="_blank" class="wa-link">Chat on WhatsApp</a>
@@ -76,7 +79,7 @@
                     </div>
                 </div>
                 <div class="paper-card step-card tape-3">
-                    <h3>Step 3</h3>
+                    <h3>STEP 3</h3>
                     <p>We'll give you a quotation. Once the deposit is sorted, relax and get ready for your gorgeous new nails!</p>
                 </div>
             </div>
@@ -103,7 +106,7 @@
         </section>
 
         <footer class="site-footer">
-            <p><strong>SHIPPING INFO:</strong> Fast local delivery within Selangor and nationwide across Malaysia.</p>
+            <p><strong>SHIPPING INFO:</strong> Fast local delivery within Selangor and nationwide across Malaysia. [cite: 2026-03-16]</p>
             <p>&copy; 2026 Nocturne Press-On Nails. All rights reserved.</p>
         </footer>
 
@@ -114,10 +117,17 @@
             <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6L18 6v12z"/></svg>
             <span>SHOP</span>
         </a>
-        <a href="#" class="control-btn active-player" title="Back to Top">
-            <svg viewBox="0 0 24 24"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg>
+        
+        <a href="#" class="control-btn active-player" id="play-btn" title="Back to Top / Pause">
+            <div class="nav-icon arrow-icon">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="nav-icon pause-icon">
+                <svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </div>
             <span>HOME</span>
         </a>
+        
         <a href="#guide" class="control-btn" title="Guides">
             <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6z"/></svg>
             <span>GUIDE</span>
