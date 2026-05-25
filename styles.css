@@ -62,7 +62,7 @@ body {
 /* Red Giant Title overlapping the record circle */
 .main-logo { 
     font-family: 'Monsieur La Doulaise', cursive; 
-    font-size: 15rem; 
+    font-size: 11rem; 
     color: var(--brand-red); 
     text-shadow: 3px 4px 0px #000;
     z-index: 20; /* Sits directly over the vinyl */
