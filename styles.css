@@ -29,12 +29,23 @@ body {
 
 .brand-header { text-align: center; padding: 30px 0 10px; }
 .sub-logo { font-size: 0.9rem; letter-spacing: 4px; font-weight: 700; }
-.main-logo { font-family: 'New Rocker', cursive; font-size: 4rem; color: var(--brand-red); text-shadow: 3px 3px 0px #000; margin-top: -5px; }
-
+.main-logo { 
+    font-family: 'UnifrakturMaguntia', cursive; 
+    font-size: 4.5rem; /* Slightly larger as this font scales differently */
+    color: var(--brand-red); 
+    text-shadow: 3px 3px 0px #000; 
+    margin-top: -5px; 
+}
 .main-content { max-width: 800px; margin: 0 auto; padding: 0 20px; }
 
 section { padding: 50px 0; border-bottom: 1px dashed rgba(255,255,255,0.1); }
-.section-title { font-family: 'New Rocker', cursive; font-size: 2.5rem; text-align: center; letter-spacing: 2px; margin-bottom: 25px; }
+.section-title { 
+    font-family: 'Permanent Marker', cursive; 
+    font-size: 2.2rem; 
+    text-align: center; 
+    letter-spacing: 2px; 
+    margin-bottom: 25px; 
+}
 .section-subtitle { text-align: center; color: #aaa; margin-top: -15px; margin-bottom: 30px; }
 .text-red { color: var(--brand-red); }
 
@@ -44,7 +55,15 @@ section { padding: 50px 0; border-bottom: 1px dashed rgba(255,255,255,0.1); }
 .spinning-vinyl { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; animation: spin 10s linear infinite; }
 
 /* PAPER CARDS */
-.paper-card { background-color: var(--paper-cream); color: #1a1a1a; padding: 20px; font-family: 'Special Elite', monospace; box-shadow: 5px 8px 20px var(--paper-shadow); border-radius: 2px; clip-path: polygon(0% 0%, 100% 1%, 99% 98%, 0% 100%); }
+.paper-card { 
+    font-family: 'Special Elite', monospace; 
+    background-color: var(--paper-cream); 
+    color: #1a1a1a; 
+    padding: 20px; 
+    box-shadow: 5px 8px 20px var(--paper-shadow); 
+    border-radius: 2px; 
+    clip-path: polygon(0% 0%, 100% 1%, 99% 98%, 0% 100%); 
+}
 .welcome-card { transform: rotate(-2deg); text-align: center; max-width: 400px; }
 .welcome-card h2 { font-size: 1.8rem; color: var(--brand-red); }
 .welcome-card span { color: #111; font-size: 1.2rem; }
