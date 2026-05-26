@@ -76,7 +76,8 @@ body {
     pointer-events: none;
     white-space: nowrap;
     position: relative;
-    z-index: 21;
+    transform: translateZ(25px);
+
 }
 
 /* Giant Right-Hand Vinyl Display */
