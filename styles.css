@@ -76,7 +76,7 @@ body {
     pointer-events: none;
     white-space: nowrap;
     position: relative;
-    transform: translateZ(25px);
+    transform: translateZ(100px);
 
 }
 
