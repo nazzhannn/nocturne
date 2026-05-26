@@ -123,11 +123,22 @@ body {
 
 .welcome-heading {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 4rem; 
+    font-size: 3rem; 
     color: #ffffff; 
     line-height: 0.9;
     letter-spacing: 2px;
-    text-transform: lowercase; 
+    text-transform: lowercase;
+    transform: translateX(-50px) 
+}
+
+.welcome-heading2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem; 
+    color: #ffffff; 
+    line-height: 0.9;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+    transform: translateX(-100px) 
 }
 
 /* --- STRUCTURE AND SECTIONS --- */
