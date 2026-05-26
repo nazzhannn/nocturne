@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Nocturne Press-On Nails</title>
+    <link rel="icon" type="image/png" href="images/logo-circle.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .detail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 40px 0;
+            margin-top: 20px;
+        }
+        .detail-image-box {
+            flex: 1;
+            min-width: 300px;
+            background: #141414;
+            border: 1px solid #252525;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .detail-image-box img {
+            width: 100%;
+            max-height: 480px;
+            object-fit: contain;
+        }
+        .detail-info-box {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .detail-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            color: var(--brand-red);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .detail-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .detail-description {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #ccc;
+            margin-bottom: 35px;
+            white-space: pre-line; /* Respects line breaks in our details text */
+        }
+        .quote-btn {
+            display: inline-block;
+            background-color: #25d366; 
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+            text-align: center;
+            padding: 16px 32px;
+            border-radius: 50px;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .quote-btn:hover {
+            transform: translateY(-3px);
+            background-color: #20ba5a;
+        }
+        .back-link {
+            color: var(--text-light);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--brand-red); }
+    </style>
+</head>
+<body>
+    
+    <div class="stars-overlay"></div>
+
+    <main class="main-content">
+        <a href="index.html#shop" class="back-link">← Back to Collection</a>
+
+        <div class="detail-container">
+            <div class="detail-image-box">
+                <img id="product-img-target" src="" alt="Press-On Nails View">
+            </div>
+
+            <div class="detail-info-box">
+                <h1 id="product-title-target" class="detail-title">Loading...</h1>
+                <p id="product-price-target" class="detail-price"></p>
+                <p id="product-desc-target" class="detail-description"></p>
+
+                <a id="whatsapp-btn-target" href="#" target="_blank" class="quote-btn">
+                    Get Quotation via WhatsApp
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // --- ALL 6 PRODUCTS DATA ARCHITECTURE ---
+        const productsData = {
+            "midnight-grunge": {
+                title: "Midnight Grunge",
+                price: "RM 45.00",
+                img: "images/nail1.png",
+                desc: "Embrace the dark aesthetic with our classic Midnight Grunge set. Featuring a rough, deep, textured dark aura with industrial chrome micro-accents.\n\n• Finish: Ultra Glossy / Distressed Matte\n• Shape options: Coffin, Stiletto, Square\n• Includes: 10 Custom Nails, Nail Glue, Buffer, Cuticle Tool."
+            },
+            "crimson-riot": {
+                title: "Crimson Riot",
+                price: "RM 50.00",
+                img: "images/nail2.png",
+                desc: "A bold statement of rebellion. Crimson Riot features an intense bleeding deep-red ombre blended into a midnight dark base.\n\n• Finish: Mirror Shine High Gloss\n• Shape options: Long Stiletto, Almond\n• Includes: 10 Custom Nails, Nail Glue, Buffer, Cuticle Tool."
+            },
+            "wave-riders": {
+                title: "Wave Riders",
+                price: "RM 50.00",
+                img: "images/nail3.png",
+                desc: "Ride the current with fluid, 3D textured water-droplet designs layered over a translucent deep oceanic base aura.\n\n• Finish: 3D Gel Texture\n• Shape options: Oval, Medium Almond\n• Includes: 10 Custom Nails, Adhesive Tabs, Buffer."
+            },
+            "chikawa": {
+                title: "Chikawa",
+                price: "RM 99.00",
+                img: "images/nail4.png",
+                desc: "The ultimate cute-meets-custom masterpiece. Fully hand-painted detailed portrait character art of Chiikawa paired with clear glass gems and sweet 3D element encapsulation.\n\n• Finish: Premium Handpainted Overlay\n• Shape options: Short Round, Medium Square\n• Includes: 10 Custom Art Nails, Premium Glue Pack, Prep Pads."
+            },
+            "vampire-matte": {
+                title: "Vampire Matte",
+                price: "RM 40.00",
+                img: "images/nail5.png",
+                desc: "Velvety, dark, and elegant. A full-coverage gothic configuration with a specialized light-absorbing matte structural top coat.\n\n• Finish: Suede Matte\n• Shape options: Ballerina, Long Coffin\n• Includes: 10 Custom Nails, Nail Glue, Prep Wipes."
+            },
+            "starboy-silver": {
+                title: "Starboy Silver",
+                price: "RM 55.00",
+                img: "images/nail6.png",
+                desc: "Futuristic stellar accents. Featuring crisp hand-painted silver metallic y2k stars layered on a clean smoky visual canvas.\n\n• Finish: Metallic Chrome Finish\n• Shape options: Square, Long Almond\n• Includes: 10 Custom Nails, Nail Glue, Full Prep Toolkit."
+            }
+        };
+
+        // --- DYNAMIC RENDER CONTROLLER ---
+        document.addEventListener("DOMContentLoaded", () => {
+            // Read URL variables (e.g., ?item=chikawa)
+            const urlParams = new URLSearchParams(window.location.search);
+            const productKey = urlParams.get('item');
+
+            // Find product matching the URL key, fallback to midnight-grunge if not found
+            const product = productsData[productKey] || productsData["midnight-grunge"];
+
+            // Inject the data directly into elements
+            document.getElementById("product-title-target").innerText = product.title;
+            document.getElementById("product-price-target").innerText = product.price;
+            document.getElementById("product-desc-target").innerText = product.desc;
+            document.getElementById("product-img-target").src = product.img;
+            document.getElementById("product-img-target").alt = product.title;
+
+            // Generate clean encoded WhatsApp message string
+            const whatsappBaseNumber = "60123022659";
+            const customMessage = `Hi, I would like to get the ${product.title} press on set!`;
+            const encodedMessage = encodeURIComponent(customMessage);
+
+            // Hook message right into the action button link
+            document.getElementById("whatsapp-btn-target").href = `https://wa.me/${whatsappBaseNumber}?text=${encodedMessage}`;
+        });
+    </script>
+</body>
+</html>
