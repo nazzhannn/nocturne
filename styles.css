@@ -1,3 +1,5 @@
+yeah its not going up
+
 /* --- GLOBAL CONFIG & THEME --- */
 :root {
     --bg-dark: #050505; /* Blackest black */
@@ -67,16 +69,20 @@ body {
 
 .main-logo { 
     font-family: 'Monsieur La Doulaise', cursive; 
-    font-size: 16rem;          /* Clean, legible vintage giant scale */
+    font-size: 18rem; 
     color: var(--brand-red); 
     font-weight: normal; 
     letter-spacing: -2px;
     pointer-events: none;
     white-space: nowrap;
-    position: absolute;        /* Uses absolute positioning for absolute control */
-    left: -40px;               /* Cleanly offsets it slightly left on the layout grid */
-    top: -20px;                /* Layers it subtly right near the top area */
-    z-index: 10;               /* Keeps it structurally above the vinyl layer (5) */
+    position: relative;
+    
+    /* --- THE FIXES --- */
+    margin-left: -200px;
+    margin-top: -60px;       /* Changed from 20px to negative to pull it UP over the vinyl */
+    z-index: 10;             /* Higher than the vinyl's z-index (5) so it layers on top */
+    
+    /* Remove translateZ if it's still causing trouble */
 }
 
 /* Giant Right-Hand Vinyl Display */
@@ -88,8 +94,8 @@ body {
 }
 
 .vinyl-display { 
-    width: 600px;              /* Restored to a perfect circle circle */
-    height: 600px; 
+    width: 520px; 
+    height: 520px; 
     border-radius: 50%; 
     background: #050505; 
     border: 12px solid #141414; 
@@ -98,8 +104,8 @@ body {
 }
 
 .spinning-vinyl { 
-    width: 140%; 
-    height: 140%; 
+    width: 100%; 
+    height: 100%; 
     border-radius: 50%; 
     object-fit: cover; 
     animation: spin 12s linear infinite; 
@@ -123,6 +129,8 @@ body {
     color: #ffffff; 
     line-height: 0.9;
     letter-spacing: 2px;
+    text-transform: lowercase; 
+    transform: translateX(-100px)
 }
 
 .welcome-heading2 {
@@ -131,6 +139,9 @@ body {
     color: var(--brand-red); 
     line-height: 0.9;
     letter-spacing: 2px;
+    text-transform: lowercase; 
+    transform: translateX(-200px)
+
 }
 
 /* --- STRUCTURE AND SECTIONS --- */
@@ -183,11 +194,11 @@ section {
 .product-card { 
     background: #141414; 
     border: 1px solid #252525; 
-    border-radius: 8px; 
+    border-radius: 8px; /* ADD THIS LINE: Makes the card corners rounded */
     padding: 15px; 
     text-align: center; 
     transition: transform 0.2s; 
-    overflow: hidden;   
+    overflow: hidden;   /* Ensures the background/image doesn't bleed past the rounded corners */
 }
 
 .product-card:hover { 
@@ -195,6 +206,7 @@ section {
     border-color: var(--brand-red); 
 }
 
+/* FIXED AND RENAMED SELECTOR FROM PLACEHOLDER TO IMG */
 .product-img { 
     width: 100%; 
     height: 250px; 
@@ -327,8 +339,8 @@ section {
 /* --- RESPONSIVE ADJUSTMENTS --- */
 @media(max-width: 768px) {
     .hero-poster { height: 650px; width: 100%; }
-    .logo-wrapper { margin-left: 0px; margin-top: 10px; }
-    .main-logo { font-size: 9rem; letter-spacing: 0; position: relative; left: 0; top: 0; text-align: center; }
+    .logo-wrapper { margin-left: 0px; }
+    .main-logo { font-size: 9rem; letter-spacing: 0; }
     
     .vinyl-container { top: 180px; right: -80px; }
     .vinyl-display { width: 320px; height: 320px; border-width: 8px; }
