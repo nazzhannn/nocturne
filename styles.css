@@ -78,8 +78,8 @@ body {
     position: relative;
     
     /* --- THE FIXES --- */
-    margin-left: -250px;
-    margin-top: -80px;       /* Changed from 20px to negative to pull it UP over the vinyl */
+    margin-left: -340px;
+    margin-top: -20px;       /* Changed from 20px to negative to pull it UP over the vinyl */
     z-index: 10;             /* Higher than the vinyl's z-index (5) so it layers on top */
     
     /* Remove translateZ if it's still causing trouble */
