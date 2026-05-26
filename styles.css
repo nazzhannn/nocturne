@@ -73,13 +73,16 @@ body {
     color: var(--brand-red); 
     font-weight: normal; 
     letter-spacing: -2px;
-    margin-top: 20px;
-    margin-left: -200px;
     pointer-events: none;
     white-space: nowrap;
     position: relative;
-    transform: translateZ(100px);
-
+    
+    /* --- THE FIXES --- */
+    margin-left: -200px;
+    margin-top: -60px;       /* Changed from 20px to negative to pull it UP over the vinyl */
+    z-index: 10;             /* Higher than the vinyl's z-index (5) so it layers on top */
+    
+    /* Remove translateZ if it's still causing trouble */
 }
 
 /* Giant Right-Hand Vinyl Display */
@@ -120,13 +123,24 @@ body {
     gap: 0px;
 }
 
-.welcome-heading {
+.welcome-heading-upper {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem; 
+    color: #ffffff; 
+    line-height: 0.9;
+    letter-spacing: 2px;
+    text-transform: lowercase; 
+    transform: translateX(-200px)
+}
+
+.welcome-heading-lower {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 4rem; 
     color: #ffffff; 
     line-height: 0.9;
     letter-spacing: 2px;
     text-transform: lowercase; 
+    transform: translateX(-100px)
 }
 
 /* --- STRUCTURE AND SECTIONS --- */
