@@ -19,17 +19,15 @@ html {
 
 body {
     background-color: var(--bg-dark);
-    /* --- NEW: PAPER TEXTURE (Replaced pocodot pattern) --- */
     background-image: url('images/black-paper-texture.jpg');
-    background-repeat: repeat; /* Texture tiles across entire screen */
-    background-size: cover; /* Optional: adjust if texture tiles badly, use 'cover' or 'repeat' */
+    background-repeat: repeat; 
+    background-size: cover; 
     color: var(--text-light);
     font-family: 'Roboto', sans-serif;
     padding-bottom: 130px;
     overflow-x: hidden;
 }
 
-/* Stars overlay stays as a layer over the new paper texture */
 .stars-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     background-image: radial-gradient(white 1px, transparent 0);
@@ -37,20 +35,19 @@ body {
 }
 
 /* --- POSTER HERO AREA --- */
-/* --- POSTER HERO AREA --- */
 .hero-poster {
     position: relative;
     max-width: 800px;
     height: 850px; 
     margin: 20px auto;
     background: transparent; 
-    border: none; /* Removes the physical line */
-    box-shadow: none; /* Removes the shadow */
+    border: none; 
+    box-shadow: none; 
     display: flex;
     flex-direction: column;
     padding-top: 40px;
-    /* overflow: hidden; has been REMOVED so your text and vinyl don't get chopped off */
 }
+
 .sub-logo { 
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -62,7 +59,6 @@ body {
     text-align: center;
 }
 
-/* Title Positioning - Pushed past the frame edge on the left */
 .logo-wrapper {
     position: relative;
     margin-left: -50px; 
@@ -81,8 +77,6 @@ body {
     position: relative;
     z-index: 21;
 }
-
-/* --- REMOVED: .logo-byline CSS Block (No longer needed) --- */
 
 /* Giant Right-Hand Vinyl Display */
 .vinyl-container {
@@ -122,10 +116,9 @@ body {
     gap: 0px;
 }
 
-/* --- NEW: WELCOME FONT SMALLER (Reduced rem size) --- */
 .welcome-heading {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 4rem; /* KECIK SIKIT from 5.5rem */
+    font-size: 4rem; 
     color: #ffffff; 
     line-height: 0.9;
     letter-spacing: 2px;
@@ -173,24 +166,49 @@ section {
 }
 
 /* --- CATALOG CARD STYLES --- */
-.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; }
-.product-card { background: #141414; border: 1px solid #252525; padding: 15px; text-align: center; transition: transform 0.2s; }
-.product-card:hover { transform: translateY(-5px); border-color: var(--brand-red); }
-.product-image-placeholder { 
+.product-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 25px; 
+}
+
+.product-card { 
+    background: #141414; 
+    border: 1px solid #252525; 
+    padding: 15px; 
+    text-align: center; 
+    transition: transform 0.2s; 
+}
+
+.product-card:hover { 
+    transform: translateY(-5px); 
+    border-color: var(--brand-red); 
+}
+
+/* FIXED AND RENAMED SELECTOR FROM PLACEHOLDER TO IMG */
+.product-img { 
     width: 100%; 
     height: 250px; 
-    object-fit: contain; /* CHANGED: Shrinks the photo so the entire image fits perfectly inside without stretching or cutting off */
-    background: #111111; /* Adds a clean, dark background to pad any empty space around the image */
-    border-radius: 4px;  /* Optional: gives the image corners a slight, smooth roundness */
+    object-fit: contain; 
+    background: #111111; 
+    border-radius: 4px;  
     margin-bottom: 15px; 
+    display: block;
 }
+
 .product-title { 
     font-family: 'Bebas Neue', sans-serif; 
     font-size: 2rem; 
     letter-spacing: 1px;
     margin-bottom: 5px; 
 }
-.product-price { font-family: 'Roboto', sans-serif; font-weight: bold; color: var(--brand-red); font-size: 1.2rem; }
+
+.product-price { 
+    font-family: 'Roboto', sans-serif; 
+    font-weight: bold; 
+    color: var(--brand-red); 
+    font-size: 1.2rem; 
+}
 
 /* --- ORDER PROCESS STEP CARDS --- */
 .order-steps { display: flex; flex-direction: column; gap: 20px; align-items: center; }
@@ -228,7 +246,7 @@ section {
 .site-footer { text-align: center; padding: 50px 0; font-size: 0.9rem; color: #666; font-family: 'Roboto', sans-serif; }
 .site-footer p { margin-bottom: 10px; }
 
-/* --- STICKY NAV TRACK BUTTONS (UNIFIED BRAND RED) --- */
+/* --- STICKY NAV TRACK BUTTONS --- */
 .media-controls { 
     position: fixed; 
     bottom: 0; 
@@ -279,7 +297,6 @@ section {
     fill: var(--brand-red); 
 }
 
-/* --- MULTI-ICON TRANSITION ARCHITECTURE --- */
 .media-controls .nav-icon.default { opacity: 1; transform: scale(1); }
 .media-controls .nav-icon.scrolled { opacity: 0; transform: scale(0.6); }
 
@@ -299,8 +316,6 @@ section {
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
-
-/* Tablets and small screens */
 @media(max-width: 768px) {
     .hero-poster { height: 650px; width: 100%; }
     .logo-wrapper { margin-left: 0px; }
@@ -313,19 +328,15 @@ section {
     .welcome-heading { font-size: 2.5rem; } 
     
     .section-title { font-size: 3rem; }
-    
-    /* Prevents nav buttons from squeezing togetherr */
     .media-controls { gap: 15px; justify-content: space-evenly; padding: 12px 10px 18px; }
 }
 
-/* Mobile Phones (iPhones, Androids) */
 @media(max-width: 480px) {
     .hero-poster { height: 500px; padding-top: 20px; }
     
     .sub-logo { font-size: 0.85rem; letter-spacing: 3px; }
     .main-logo { font-size: 6rem; margin-top: 0; }
     
-    /* Shrinks the vinyl and tucks it nicely into the side */
     .vinyl-container { top: 150px; right: -50px; }
     .vinyl-display { width: 220px; height: 220px; border-width: 5px; }
     
@@ -336,6 +347,5 @@ section {
     .step-card { padding: 15px; }
     .step-card h3 { font-size: 2.2rem; }
     
-    /* Adjusts WhatsApp box for smaller screens */
     .whatsapp-container { flex-direction: column; gap: 10px; text-align: center; }
 }
