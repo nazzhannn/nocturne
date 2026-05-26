@@ -127,8 +127,8 @@ body {
     color: #ffffff; 
     line-height: 0.9;
     letter-spacing: 2px;
-    text-transform: lowercase;
-    transform: translateX(-50px) 
+    /*text-transform: lowercase;*/
+    transform: translateX(-150px) 
 }
 
 .welcome-heading2 {
@@ -137,8 +137,8 @@ body {
     color: #ffffff; 
     line-height: 0.9;
     letter-spacing: 2px;
-    text-transform: lowercase;
-    transform: translateX(-100px) 
+    /*text-transform: lowercase;*/
+    transform: translateX(-200px) 
 }
 
 /* --- STRUCTURE AND SECTIONS --- */
