@@ -67,7 +67,7 @@ body {
 
 .main-logo { 
     font-family: 'Monsieur La Doulaise', cursive; 
-    font-size: 14rem; 
+    font-size: 19rem; 
     color: var(--brand-red); 
     font-weight: normal; 
     letter-spacing: -2px;
@@ -76,6 +76,7 @@ body {
     white-space: nowrap;
     position: relative;
     z-index: 21;
+    x-index: -15;
 }
 
 /* Giant Right-Hand Vinyl Display */
