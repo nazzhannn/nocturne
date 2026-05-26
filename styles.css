@@ -67,7 +67,7 @@ body {
 
 .main-logo { 
     font-family: 'Monsieur La Doulaise', cursive; 
-    font-size: 30rem; 
+    font-size: 27rem; 
     color: var(--brand-red); 
     font-weight: normal; 
     letter-spacing: -2px;
@@ -76,7 +76,7 @@ body {
     position: relative;
     
     /* --- THE FIXES --- */
-    margin-left: -500px;
+    margin-left: -600px;
     margin-top: -260px;       /* Changed from 20px to negative to pull it UP over the vinyl */
     z-index: 10;             /* Higher than the vinyl's z-index (5) so it layers on top */
     
@@ -123,22 +123,22 @@ body {
 
 .welcome-heading {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 3rem; 
-    color: #ffffff; 
-    line-height: 0.9;
-    letter-spacing: 2px;
-    /*text-transform: lowercase;*/
-    transform: translateX(-150px) 
-}
-
-.welcome-heading2 {
-    font-family: 'Bebas Neue', sans-serif;
     font-size: 2rem; 
     color: #ffffff; 
     line-height: 0.9;
     letter-spacing: 2px;
     /*text-transform: lowercase;*/
-    transform: translateX(-200px) 
+    transform: translateX(-250px) 
+}
+
+.welcome-heading2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem; 
+    color: #ffffff; 
+    line-height: 0.9;
+    letter-spacing: 2px;
+    /*text-transform: lowercase;*/
+    transform: translateX(-300px) 
 }
 
 /* --- STRUCTURE AND SECTIONS --- */
