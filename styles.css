@@ -42,16 +42,16 @@ body {
     max-width: 800px;
     height: 850px; 
     margin: 20px auto;
-    /* --- NEW: Solid Dark Background (No box cards/lighter gradients) --- */
-    background-color: #030303; 
-    border: 3px solid #222;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    /* --- REMOVED BOX STYLING --- */
+    background: transparent; 
+    border: none;
+    box-shadow: none;
+    /* --------------------------- */
     display: flex;
     flex-direction: column;
     overflow: hidden;
     padding-top: 40px;
 }
-
 .sub-logo { 
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
