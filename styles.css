@@ -37,20 +37,19 @@ body {
 }
 
 /* --- POSTER HERO AREA --- */
+/* --- POSTER HERO AREA --- */
 .hero-poster {
     position: relative;
     max-width: 800px;
     height: 850px; 
     margin: 20px auto;
-    /* --- REMOVED BOX STYLING --- */
     background: transparent; 
-    border: none;
-    box-shadow: none;
-    /* --------------------------- */
+    border: none; /* Removes the physical line */
+    box-shadow: none; /* Removes the shadow */
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     padding-top: 40px;
+    /* overflow: hidden; has been REMOVED so your text and vinyl don't get chopped off */
 }
 .sub-logo { 
     font-family: 'Roboto', sans-serif;
