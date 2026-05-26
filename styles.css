@@ -175,13 +175,15 @@ section {
 .product-card { 
     background: #141414; 
     border: 1px solid #252525; 
+    border-radius: 8px; /* ADD THIS LINE: Makes the card corners rounded */
     padding: 15px; 
     text-align: center; 
     transition: transform 0.2s; 
+    overflow: hidden;   /* Ensures the background/image doesn't bleed past the rounded corners */
 }
 
 .product-card:hover { 
-    transform: translateY(-5px); 
+    transform: translateY(-10px); 
     border-color: var(--brand-red); 
 }
 
