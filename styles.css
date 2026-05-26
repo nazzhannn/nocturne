@@ -69,7 +69,7 @@ body {
 
 .main-logo { 
     font-family: 'Monsieur La Doulaise', cursive; 
-    font-size: 20rem; 
+    font-size: 21rem; 
     color: var(--brand-red); 
     font-weight: normal; 
     letter-spacing: -3px;
@@ -79,7 +79,7 @@ body {
     
     /* --- THE FIXES --- */
     margin-left: -250px;
-    margin-top: -60px;       /* Changed from 20px to negative to pull it UP over the vinyl */
+    margin-top: -80px;       /* Changed from 20px to negative to pull it UP over the vinyl */
     z-index: 10;             /* Higher than the vinyl's z-index (5) so it layers on top */
     
     /* Remove translateZ if it's still causing trouble */
