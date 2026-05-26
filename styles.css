@@ -308,7 +308,7 @@ section {
     
     .section-title { font-size: 3rem; }
     
-    /* Prevents nav buttons from squeezing together */
+    /* Prevents nav buttons from squeezing togetherr */
     .media-controls { gap: 15px; justify-content: space-evenly; padding: 12px 10px 18px; }
 }
 
