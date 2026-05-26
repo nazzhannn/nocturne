@@ -69,10 +69,10 @@ body {
 
 .main-logo { 
     font-family: 'Monsieur La Doulaise', cursive; 
-    font-size: 19rem; 
+    font-size: 20rem; 
     color: var(--brand-red); 
     font-weight: normal; 
-    letter-spacing: -2px;
+    letter-spacing: -3px;
     pointer-events: none;
     white-space: nowrap;
     position: relative;
@@ -130,7 +130,7 @@ body {
     line-height: 0.9;
     letter-spacing: 2px;
     text-transform: lowercase; 
-    transform: translateX(-350px)
+    transform: translateX(-290px)
 }
 
 .welcome-heading-lower {
